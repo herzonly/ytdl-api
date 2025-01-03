@@ -14,7 +14,11 @@ app.post('/api/ytdl', async (req, res) => {
   try {
     const data = await ytmp4(url);
     const { title, video, author, description, duration, views, upload, thumbnail } = data;
-    res.status(200).json({ title, video, author, description, duration, views, upload, thumbnail });
+    res.status(200).json({
+      author: "Herza",
+      status: 200,
+      data: {
+        title, video, author, description, duration, views, upload, thumbnail }});
   } catch (error) {
     res.status(500).json({ error: 'Gagal mengambil data YouTube' });
   }
@@ -26,7 +30,11 @@ app.get('/api/ytdl', async (req, res) => {
   try {
     const data = await ytmp4(url);
     const { title, video, author, description, duration, views, upload, thumbnail } = data;
-    res.status(200).json({ title, video, author, description, duration, views, upload, thumbnail });
+    res.status(200).json({
+      author: "Herza",
+      status: 200,
+      data: {
+        title, video, author, description, duration, views, upload, thumbnail }});
   } catch (error) {
     res.status(500).json({ error: 'Gagal mengambil data YouTube' });
   }
